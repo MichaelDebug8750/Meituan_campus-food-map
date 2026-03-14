@@ -304,6 +304,339 @@ footer span{color:var(--accent3);}
 /* === ARRIVAL TIME === */
 .arrival-chip{display:inline-flex;align-items:center;gap:3px;font-size:10px;color:var(--blue);font-weight:500;}
 
+
+/* ============================================================
+   手机竖屏适配 (≤480px) + 平板优化 (481-768px)
+   ============================================================ */
+
+/* === 通用手机修复 === */
+@media(max-width:480px){
+  :root{--radius:12px;--radius-sm:8px;}
+
+  /* ── HEADER ── */
+  header{
+    height:auto;
+    min-height:52px;
+    padding:7px 12px;
+    flex-wrap:wrap;
+    gap:5px;
+    align-items:center;
+  }
+  .logo{flex-shrink:0;}
+  .logo-icon{width:28px;height:28px;font-size:14px;}
+  .logo-text{font-size:14px;}
+  .logo-sub{display:none;}
+  .header-center{
+    order:3;
+    width:100%;
+    margin:0;
+    max-width:none;
+  }
+  .header-search{height:34px;}
+  .header-search input{font-size:13px;padding:0 12px;}
+  .header-search button{padding:0 13px;font-size:12px;}
+  .header-right{gap:4px;flex-shrink:0;}
+  .lang-sw{display:none;}
+  .hbtn{padding:5px 8px;font-size:11px;border-radius:18px;}
+  .hbtn-label{display:none;}
+  .sdot{display:none;}
+
+  /* ── TABS (hidden — use bottom nav) ── */
+  .tabs{display:none;}
+
+  /* ── GPS BANNER ── */
+  .gps-banner{padding:7px 12px;font-size:11px;}
+
+  /* ── CITY BAR ── */
+  .city-bar{padding:8px 12px;gap:7px;}
+  .city-pill{
+    padding:6px 10px;
+    border-radius:10px;
+    gap:3px;
+    min-width:52px;
+  }
+  .city-pill .cp-flag{font-size:15px;}
+  .city-pill .cp-name{font-size:10px;}
+  .city-pill .cp-count{font-size:9px;opacity:.7;}
+
+  /* ── RECOMMEND SECTION ── */
+  .rec-section{padding:10px 12px 0;}
+  .rec-header{margin-bottom:8px;}
+  .rec-title{font-size:14px;}
+  .rec-topics{gap:5px;padding-bottom:8px;}
+  .rec-topic-btn{
+    padding:5px 12px;
+    font-size:11px;
+    border-radius:18px;
+  }
+
+  /* ── REC GRID: 2列 ── */
+  .rec-body{flex-direction:column;gap:10px;}
+  .rec-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+  }
+  .rec-card{border-radius:10px;}
+  .rec-card-img{height:72px;font-size:26px;}
+  .rec-card-body{padding:7px 8px 9px;}
+  .rec-card-name{
+    font-size:11px;
+    line-height:1.3;
+    white-space:normal;
+    -webkit-line-clamp:2;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    height:2.6em;
+    text-overflow:ellipsis;
+  }
+  .rec-card-score-row{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    font-size:9px;
+    flex-wrap:wrap;
+  }
+  .rec-card-rating{font-size:10px;}
+  .rec-card-value{font-size:8px;padding:1px 3px;}
+  .rec-card-price{font-size:9px;}
+  .rec-card-num{width:19px;height:19px;font-size:10px;top:-7px;left:-7px;}
+  .rec-card-check{width:19px;height:19px;font-size:10px;top:-7px;right:-7px;}
+  .rec-card-ad{font-size:7px;padding:1px 4px;}
+  .rec-valuebar{height:2px;}
+
+  /* ── DICE PANEL ── */
+  .dice-panel{
+    width:100%;
+    flex-direction:column;
+    gap:8px;
+    padding:12px 14px;
+    border-radius:12px;
+  }
+  .dice-panel-label{font-size:11px;font-weight:600;margin-bottom:2px;}
+  .dice-count-btns{
+    flex-direction:row;
+    gap:6px;
+    width:100%;
+  }
+  .dcb{
+    flex:1;
+    padding:6px 4px;
+    font-size:11px;
+    width:auto;
+    border-radius:18px;
+    text-align:center;
+  }
+  .dice-hint{
+    font-size:10px;
+    color:var(--ink3);
+    min-height:auto;
+    text-align:center;
+    line-height:1.4;
+  }
+  .dice-btn{
+    width:100%;
+    padding:11px 0;
+    font-size:13px;
+    font-weight:700;
+    border-radius:22px;
+  }
+  .dice-btn .dice-icon{font-size:18px;}
+
+  /* ── FILTER BAR ── */
+  .filter-wrap{
+    padding:8px 12px 10px;
+    gap:10px;
+  }
+  .fg-lbl{font-size:9px;letter-spacing:.04em;}
+  .pills{gap:5px;}
+  .pill{padding:4px 9px;font-size:10px;border-radius:16px;}
+  .budget-range-wrap{gap:5px;}
+  .budget-input{width:58px;font-size:11px;padding:4px 6px;}
+  .budget-apply{padding:4px 8px;font-size:10px;}
+
+  /* ── RESULT BAR ── */
+  .result-bar{padding:7px 12px;}
+  .result-count{font-size:11px;}
+  .sort-sel{font-size:10px;padding:4px 7px;}
+
+  /* ── CARDS GRID: 单列 ── */
+  .grid{
+    grid-template-columns:1fr;
+    gap:10px;
+    padding:0 12px 70px;
+  }
+  .card{border-radius:12px;}
+  .card-img{height:120px;font-size:36px;}
+  .card-body{padding:11px;}
+  .card-name{font-size:13px;}
+  .card-tags{gap:3px;margin-bottom:6px;}
+  .ctag{font-size:9px;padding:2px 6px;}
+  .info-row{font-size:10px;gap:6px;}
+  .pay-row{gap:2px;margin-top:5px;}
+  .pi{font-size:8px;padding:2px 5px;}
+
+  /* ── SCHOOL GRID ── */
+  .school-grid{
+    grid-template-columns:repeat(2,1fr);
+    padding:10px 12px;
+    gap:8px;
+  }
+  .school-card{padding:12px 12px;}
+  .sc-icon{font-size:18px;margin-bottom:4px;}
+  .sc-name{font-size:12px;}
+  .sc-meta{font-size:10px;}
+
+  /* ── RANKING ── */
+  .ranking-wrap{padding:10px 12px;}
+  .rank-filters{flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+  .rank-row{gap:8px;padding:9px 10px;}
+  .rank-num{width:24px;height:24px;font-size:11px;}
+  .rank-emoji{font-size:20px;}
+  .rank-name{font-size:12px;}
+  .rank-sub{font-size:9px;}
+  .rank-rating{font-size:13px;}
+  .rank-crowd{font-size:9px;}
+
+  /* ── MODAL ── */
+  .modal{
+    max-height:95vh;
+    border-radius:20px 20px 0 0;
+  }
+  .modal-hero{
+    height:130px;
+    margin:8px 14px;
+    font-size:50px;
+    border-radius:12px;
+  }
+  .modal-body{padding:0 14px 28px;}
+  .m-name{font-size:18px;margin-bottom:3px;}
+  .m-sub{font-size:11px;margin-bottom:8px;}
+  .m-tags{gap:4px;margin-bottom:10px;flex-wrap:wrap;}
+  .m-tag,.m-tag-hours,.m-tag-walk,.m-tag-arrival{
+    font-size:10px;
+    padding:3px 9px;
+    border-radius:16px;
+  }
+  .m-scores{
+    grid-template-columns:repeat(2,1fr);
+    gap:6px;
+    margin-bottom:12px;
+  }
+  .ms{padding:9px 6px;}
+  .ms-val{font-size:18px;}
+  .ms-lbl{font-size:8px;}
+  .sec-title{font-size:11px;margin-bottom:7px;}
+  .crowd-widget{padding:10px;margin-bottom:12px;}
+  .crowd-hours{height:30px;}
+  .deal-box{padding:11px;margin-bottom:12px;}
+  .deal-text{font-size:13px;}
+  .split-widget{padding:11px;margin-bottom:12px;}
+  .split-row{gap:6px;}
+  .split-input{font-size:12px;padding:5px 8px;}
+  .split-btn{font-size:11px;padding:6px 10px;}
+  .map-btn{font-size:12px;padding:11px;}
+  .star-input .si{font-size:20px;}
+  .m-actions{gap:7px;margin-top:12px;}
+  .btn-p,.btn-s{font-size:12px;padding:11px;}
+
+  /* ── FAV PAGE ── */
+  .fav-page-hdr{padding:11px 14px;}
+  .fav-page-back{width:28px;height:28px;font-size:15px;}
+  .fav-page-title{font-size:15px;}
+  #favPageContent{padding:0 12px 70px;}
+
+  /* ── DICE RESULT ── */
+  .dice-result-inner{padding:16px 20px;}
+  .dice-result-emoji{font-size:44px;margin-bottom:7px;}
+  .dice-result-status{font-size:12px;}
+  .dice-result-name{font-size:17px;}
+  .dice-result-meta{font-size:11px;margin-bottom:12px;}
+  .dice-go-btn,.dice-again-btn{padding:9px 16px;font-size:12px;}
+
+  /* ── BOTTOM NAV ── */
+  .bottom-nav{
+    display:flex;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    background:rgba(251,246,238,.97);
+    backdrop-filter:blur(12px);
+    border-top:1px solid var(--card-border);
+    z-index:90;
+    height:58px;
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  .bn-item{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-family:inherit;
+    color:var(--ink3);
+    font-size:10px;
+    font-weight:500;
+    -webkit-tap-highlight-color:transparent;
+    transition:color .15s;
+  }
+  .bn-item.active{color:var(--accent);}
+  .bn-item.active .bn-icon{stroke:var(--accent);}
+  .bn-item.active .bn-icon{
+    width:24px;height:24px;
+    stroke:currentColor;
+    transition:transform .15s, stroke .15s;
+    flex-shrink:0;
+  }
+  body{padding-bottom:58px;}
+
+  /* ── FOOTER ── */
+  footer{padding:14px 12px;font-size:10px;}
+
+  /* ── EMPTY STATE ── */
+  .empty{padding:40px 16px;}
+  .empty-icon{font-size:36px;}
+  .empty-text{font-size:14px;}
+  .empty-sub{font-size:12px;}
+}
+
+/* === 平板 / 横향 手机 (481px - 768px) === */
+@media(min-width:481px) and (max-width:768px){
+  header{padding:0 16px;gap:10px;}
+  .logo-sub{display:none;}
+  .lang-sw .lb:nth-child(n+3){display:none;} /* 只保留前2个语言 */
+  .tabs{padding:0 16px;}
+  .city-bar,.filter-wrap,.result-bar,.grid,
+  .ranking-wrap,.school-grid,.rec-section{
+    padding-left:16px;
+    padding-right:16px;
+  }
+  .grid{grid-template-columns:repeat(2,1fr);}
+  .rec-body{flex-direction:column;}
+  .rec-grid{grid-template-columns:repeat(3,1fr);}
+  .dice-panel{width:100%;flex-direction:row;flex-wrap:wrap;gap:8px;}
+  .dice-count-btns{flex-direction:row;}
+  .dcb{width:auto;}
+  .dice-btn{width:auto;}
+  .school-grid{grid-template-columns:repeat(3,1fr);}
+  .m-scores{grid-template-columns:repeat(2,1fr);}
+}
+
+/* === 底部导航栏 (仅手机) === */
+/* bottom-nav styles merged into main 480px block */
+@media(min-width:481px){
+  .bottom-nav{display:none;}
+}
+
+
+/* hbtn styles merged into main 480px block */
+
+
+  .bn-item.active svg[data-id="fav"]{fill:var(--accent);stroke:var(--accent);}
+
 </style>
 </head>
 <body>
@@ -330,7 +663,7 @@ footer span{color:var(--accent3);}
       <button class="lb" onclick="setLang('ja')" data-lang="ja">日本語</button>
       <button class="lb" onclick="setLang('tw')" data-lang="tw">繁體</button>
     </div>
-    <button class="hbtn" id="gpsBtn" onclick="requestGPS()">📍 <span data-i18n="gpsBtn">定位</span></button>
+    <button class="hbtn" id="gpsBtn" onclick="requestGPS()">📍 <span class="hbtn-label" data-i18n="gpsBtn">定位</span></button>
     <button class="hbtn" id="favBtn" onclick="toggleFavView()">♡ <span data-i18n="myFav">收藏</span></button>
   </div>
 </header>
@@ -593,6 +926,25 @@ const SCHOOLS = {
   hangzhou:['浙江大学','浙江工业大学','杭州师范大学','中国美术学院','浙江理工大学','浙江财经大学','杭州电子科技大学','浙江工商大学'],
   tokyo:['東京大学','早稲田大学','慶應義塾大学','東京工業大学','明治大学','法政大学','中央大学','青山学院大学'],
   osaka:['大阪大学','関西大学','立命館大学','近畿大学','大阪工業大学','関西学院大学','同志社大学','龍谷大学'],
+  beijing:['北京大学','清华大学','中国人民大学','北京师范大学','北京航空航天大学'],
+  guangzhou:['中山大学','华南理工大学','暨南大学','广州大学','华南师范大学'],
+  shenzhen:['深圳大学','南方科技大学','哈尔滨工业大学（深圳）','中山大学深圳','深圳职业技术大学'],
+  chengdu:['四川大学','电子科技大学','成都理工大学','西南交通大学','成都中医药大学'],
+  chongqing:['重庆大学','西南大学','重庆邮电大学','西西南政法大学','重庆师范大学'],
+  wuhan:['武汉大学','华中科技大学','武汉理工大学','中南财经政法大学','华中师范大学'],
+  suzhou:['苏州大学','苏州科技大学','昆山杜克大学','西交利物浦大学'],
+  ningbo:['宁波大学','宁波诺丁汉大学','浙江万里学院','宁波工程学院'],
+  xian:['西安交通大学','西北大学','西安电子科技大学','长安大学','西北工业大学'],
+  changsha:['中南大学','湖南大学','国防科技大学','湖南师范大学','长沙理工大学'],
+  qingdao:['中国海洋大学','青岛大学','中国石油大学（华东）','青岛科技大学'],
+  jinan:['山东大学','济南大学','山东师范大学','山东财经大学'],
+  harbin:['哈尔滨工业大学','东北林业大学','黑龙江大学','哈尔滨工程大学'],
+  shenyang:['东北大学','沈阳大学','沈阳航空航天大学','辽宁大学'],
+  changchun:['吉林大学','东北师范大学','长春理工大学','吉林财经大学'],
+  liaoning:['大连理工大学','东北大学','辽宁大学','大连海事大学'],
+  taizhou:['台州学院','浙江工贸职业技术学院','台州职业技术学院'],
+  wenzhou:['温州大学','温州医科大学','温州商学院'],
+  kyoto:['京都大学','立命館大学','同志社大学','京都工芸繊維大学','京都府立大学'],
 };
 const SCHOOL_ICONS = {
   shanghai:['🏛️','🔬','⚙️','📚','🎓','🧪','🎨','👔'],
@@ -1085,7 +1437,36 @@ function showToast(msg){
   setTimeout(()=>el.classList.remove('show'),2200);
 }
 
+
+// 底部导航高亮
+function setBottomNav(el){
+  document.querySelectorAll('.bn-item').forEach(b=>b.classList.remove('active'));
+  if(el) el.classList.add('active');
+}
+// 收藏页关闭时恢复导航高亮
+const _origCloseFavPage = closeFavPage;
+function closeFavPage(){
+  _origCloseFavPage();
+  const browseBtn = document.querySelector('.bn-item[data-tab="browse"]');
+  if(browseBtn) setBottomNav(browseBtn);
+}
+
 // ===== INIT =====
+// 更新城市数量显示
+(function(){
+  var counts = {all:0,shanghai:0,hangzhou:0,osaka:0,tokyo:0};
+  ALL_RESTAURANTS.forEach(function(r){
+    counts.all++;
+    if(counts[r.city]!==undefined) counts[r.city]++;
+  });
+  var el = document.getElementById('cityAllCount');
+  if(el) el.textContent = counts.all;
+  var map = {shanghai:'citySHCount',hangzhou:'cityHZCount',osaka:'cityOSCount',tokyo:'cityTKCount'};
+  Object.keys(map).forEach(function(c){
+    var e = document.getElementById(map[c]);
+    if(e) e.textContent = counts[c];
+  });
+})();
 renderCards();
 renderSchoolGrid();
 renderRanking();
@@ -1419,5 +1800,26 @@ renderRecSection();
 // Refresh crowd every 60s
 setInterval(()=>{ renderCards(); renderRanking(); }, 60000);
 </script>
+
+<!-- 手机底部导航 -->
+<nav class="bottom-nav" id="bottomNav">
+  <button class="bn-item active" onclick="switchTab('browse');setBottomNav(this)" data-tab="browse">
+    <svg class="bn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h12"/><circle cx="19" cy="18" r="3"/></svg>
+    <span data-i18n="tabBrowse">发现</span>
+  </button>
+  <button class="bn-item" onclick="switchTab('school');setBottomNav(this)" data-tab="school">
+    <svg class="bn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/><path d="M3 9l9-6 9 6"/></svg>
+    <span data-i18n="tabSchool">学校</span>
+  </button>
+  <button class="bn-item" onclick="switchTab('ranking');setBottomNav(this)" data-tab="ranking">
+    <svg class="bn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 18V10M12 18V4M16 18v-6"/><rect x="2" y="18" width="20" height="3" rx="1"/></svg>
+    <span data-i18n="tabRanking">排行</span>
+  </button>
+  <button class="bn-item" onclick="openFavPage();setBottomNav(this)" data-tab="favs">
+    <svg class="bn-icon" data-id="fav" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    <span data-i18n="myFav">收藏</span>
+  </button>
+</nav>
+
 </body>
 </html>
